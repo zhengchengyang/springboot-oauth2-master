@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "9a01ffdb-63ab-476e-a095-fb01fb8c566d",
+		"name": "oauth2测试",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth token获取",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "zcyang",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "admin_123",
+							"type": "text"
+						},
+						{
+							"key": "client_credentials",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查询用户列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ6Y3lhbmciLCJzY29wZSI6WyJhbGwiXSwiZXhwIjoxNjMxNTkxODU2LCJ1c2VySWQiOjAsImF1dGhvcml0aWVzIjpbIlJPTEVfYWRtaW4iXSwianRpIjoiMmIwOGExODUtMGI4My00YWE1LWJkOWUtY2IwYWYzZTY1YTU1IiwiY2xpZW50X2lkIjoiYWRtaW4ifQ._rvZ3xu-tmsTjJnf2zGbMUKOeOAqyO__J8TGzLLxoks",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
