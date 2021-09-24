@@ -5,7 +5,7 @@ spring:
     name: oauth2-jwt-service
   redis:
     host: 127.0.0.1
-    password:
+    password: 123456
     port: 6379
     database: 6
   datasource:
